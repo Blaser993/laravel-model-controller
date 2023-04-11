@@ -10,8 +10,13 @@ class PageController extends Controller
 {
     public function homepage(){
         $movies = Movie::all();
-        dd($movies);
 
-        return view('welcome');
+        $data = [
+            'movies' => $movies
+        ];
+
+        //dd($movies);
+
+        return view('welcome', $data);
     }
 }
